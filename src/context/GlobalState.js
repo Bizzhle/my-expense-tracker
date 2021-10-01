@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useEffect } from "react";
+import React, { createContext, useReducer } from "react";
 import AppReducer from "./AppReducer";
 
 //initial state
@@ -6,13 +6,18 @@ const initialState = {
   transactions: [],
 };
 
-// const decodedToken = localStorage.getItem("token");
-// // const newToken = parseInt(decodedToken);
+const localStorageTransactions = JSON.parse(
+  localStorage.getItem("transaction")
+);
+let transactions =
+  localStorage.getItem("transaction") !== null ? localStorageTransactions : [];
 
-// if (decodedToken) {
-//   initialState.transactions.push(JSON.parse(decodedToken));
-// }
-// console.log(decodedToken);
+if (localStorage.getItem("transaction")) {
+  const decodedData = localStorage.getItem("transaction");
+
+  initialState.transactions = JSON.parse(decodedData);
+}
+
 //Create context
 
 export const GlobalContext = createContext(initialState);
@@ -20,21 +25,10 @@ export const GlobalContext = createContext(initialState);
 //provider
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
-  console.log(initialState);
-
-  useEffect(() => {
-    const decodedToken = localStorage.getItem("token");
-    // const newToken = parseInt(decodedToken);
-
-    if (decodedToken) {
-      initialState.transactions.push(JSON.parse(decodedToken));
-    }
-    console.log(decodedToken);
-  });
 
   //Actions
   function deleteTransaction(id) {
-    localStorage.removeItem("token");
+    localStorage.removeItem("data");
     dispatch({
       type: "DELETE_TRANSACTION",
       payload: id,
@@ -42,10 +36,12 @@ export const GlobalProvider = ({ children }) => {
   }
 
   function addTransaction(transaction) {
-    localStorage.setItem("token", JSON.stringify(transaction));
+    transactions.push(transaction);
+    localStorage.setItem("transaction", JSON.stringify(transactions));
     dispatch({
       type: "ADD_TRANSACTION",
       payload: transaction,
+      localStorage,
     });
   }
 

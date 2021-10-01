@@ -23,6 +23,7 @@ export const IncomeForm = ({
     };
 
     addTransaction(newTransaction);
+
     setAmount("");
     setDescription("");
     showIncomeForm();
