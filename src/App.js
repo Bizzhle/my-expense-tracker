@@ -11,7 +11,7 @@ function App() {
       <div className="container">
         <Balance />
 
-        <div className="form-container">
+        <div className="sub-container">
           <Buttons />
           <BalanceExpenses />
           <TransactionList />
