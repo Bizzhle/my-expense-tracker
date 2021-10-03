@@ -37,35 +37,37 @@ export const IncomeForm = ({
 
   return (
     <div ref={incomeFormRef} className={isActive ? "active" : "hidden"}>
-      <form className="modal-content animate" onSubmit={onSubmit}>
-        <div className="close-container">
-          <span className="close" onClick={closeForm}>
-            <IoMdClose />
-          </span>
-        </div>
-        <h3>Add Money</h3>
-        <div className="">
-          <input
-            type="number"
-            placeholder="enter amount"
-            autoComplete="false"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            required
-          />
-          <input
-            type="text"
-            placeholder="enter description"
-            autoComplete="false"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            required
-          />
-          <button type="submit" className="submit-button">
-            submit
-          </button>
-        </div>
-      </form>
+      <div className="modal-content animate">
+        <form className=" " onSubmit={onSubmit}>
+          <div className="close-container">
+            <span className="close" onClick={closeForm}>
+              <IoMdClose />
+            </span>
+          </div>
+          <h3>Add Money</h3>
+          <div className="">
+            <input
+              type="number"
+              placeholder="enter amount"
+              autoComplete="false"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+              required
+            />
+            <input
+              type="text"
+              placeholder="enter description"
+              autoComplete="false"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              required
+            />
+            <button type="submit" className="submit-button">
+              submit
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
