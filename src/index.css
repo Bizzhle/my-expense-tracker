@@ -125,8 +125,8 @@ input[type=text], input[type=number] {
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
-  box-sizing: border-box;
   outline: none;
+  font-size: 16px;
 }
 
 .modal-content {
@@ -221,6 +221,11 @@ input[type=text], input[type=number] {
    display: flex;
   justify-content: space-between; 
   margin: 10px 0;
+  border-left: 1px solid #86817d;
+  border-top: 1px solid #86817d;
+  border-bottom: 1px solid #86817d;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 
@@ -230,11 +235,6 @@ input[type=text], input[type=number] {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  border-left: 1px solid #86817d;
-  border-top: 1px solid #86817d;
-  border-bottom: 0.5px solid #86817d;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
   width: 100%;
 }
 
