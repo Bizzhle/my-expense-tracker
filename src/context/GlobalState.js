@@ -36,7 +36,7 @@ export const GlobalProvider = ({ children }) => {
   }
 
   function addTransaction(transaction) {
-    transactions.push(transaction);
+    transactions.unshift(transaction);
     localStorage.setItem("transaction", JSON.stringify(transactions));
     dispatch({
       type: "ADD_TRANSACTION",

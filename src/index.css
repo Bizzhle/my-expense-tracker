@@ -133,7 +133,7 @@ input[type=text], input[type=number] {
   background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 315px; /* Could be more or less, depending on screen size */
+  width: 350px; /* Could be more or less, depending on screen size */
   border-radius: 5px;
   padding: 20px;
 
@@ -141,7 +141,7 @@ input[type=text], input[type=number] {
 
 @media screen and (max-width: 415px) {
   .modal-content {
-    width: 300px;
+    width: 320px;
   }
 }
 
